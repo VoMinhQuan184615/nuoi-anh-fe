@@ -1,8 +1,26 @@
-import { Menu, X, Bell } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, Bell, LogOut } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    setIsLoggedIn(!!loggedIn);
+  }, []);
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -49,9 +67,22 @@ export default function Header() {
             </button>
 
             {/* Buttons */}
-            <button className="px-6 py-2 text-blue-600 border-2 border-blue-600 rounded-lg hover:bg-blue-50 transition font-medium text-sm">
-              Đăng nhập
-            </button>
+            {isLoggedIn ? (
+              <button
+                onClick={handleLogout}
+                className="px-6 py-2 text-red-600 border-2 border-red-600 rounded-lg hover:bg-red-50 transition font-medium text-sm flex items-center gap-2"
+              >
+                <LogOut size={16} />
+                Đăng xuất
+              </button>
+            ) : (
+              <button
+                onClick={handleLogin}
+                className="px-6 py-2 text-blue-600 border-2 border-blue-600 rounded-lg hover:bg-blue-50 transition font-medium text-sm"
+              >
+                Đăng nhập
+              </button>
+            )}
             <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium text-sm">
               Tình nguyện
             </button>
@@ -91,9 +122,22 @@ export default function Header() {
               Liên hệ
             </a>
             <div className="pt-2 border-t space-y-2">
-              <button className="w-full px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition text-left">
-                Đăng nhập
-              </button>
+              {isLoggedIn ? (
+                <button
+                  onClick={handleLogout}
+                  className="w-full px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition text-left flex items-center gap-2"
+                >
+                  <LogOut size={16} />
+                  Đăng xuất
+                </button>
+              ) : (
+                <button
+                  onClick={handleLogin}
+                  className="w-full px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition text-left"
+                >
+                  Đăng nhập
+                </button>
+              )}
               <button className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 Tình nguyện
               </button>
