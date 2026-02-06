@@ -25,18 +25,18 @@ export function LoginForm({
   return (
     <div
       className={cn(
-        "relative flex flex-col gap-6 w-full max-w-sm rounded-lg overflow-hidden ",
+        "relative flex flex-col gap-6 w-full max-w-sm rounded-lg bg-white overflow-hidden ",
         className,
       )}
       {...props}
     >
       <Card
-        className="relative overflow-hidden rounded-xl border border-white/10"
+        className="relative overflow-hidden  rounded-xl border border-white/10"
         style={{
           backgroundImage: `url(${loginImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "600px",
+          height: "auto",
         }}
       >
         {/* Overlay nằm TRONG card */}
@@ -83,11 +83,11 @@ export function LoginForm({
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="h-px flex-1 bg-border" />
-                  <span className="text-sm text-muted-foreground whitespace-nowrap">
+                  <div className="h-px flex-1 bg-black/20" />
+                  <span className="px-2 text-sm text-muted-foreground whitespace-nowrap ">
                     Or continue with
                   </span>
-                  <div className="h-px flex-1 bg-border" />
+                  <div className="h-px flex-1 bg-black/20" />
                 </div>
 
                 <div className="grid gap-6">
