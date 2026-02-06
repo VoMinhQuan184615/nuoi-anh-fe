@@ -1,5 +1,6 @@
 import { Heart, Users, Gift, Zap } from "lucide-react";
 import { Header, StatCard, ChildCard } from "../components";
+import dashboardImage from "../../../assets/dashboard-image.webp";
 
 export default function Dashboard() {
   const stats = [
@@ -38,20 +39,20 @@ export default function Dashboard() {
       name: "H'NHI",
       location: "Tây Giang, Quảng Nam",
       description: "Cô bé lớp 3 có hoàn cảnh khó khăn cần sự giúp đỡ",
-      image: null,
+      image: dashboardImage,
     },
     {
       name: "A Lảng",
       location: "Sơn La",
       description:
         "Em nhỏ tuổi cần được chăm sóc và hỗ trợ một phần chi phí sống",
-      image: null,
+      image: dashboardImage,
     },
     {
       name: "Hoa Mai",
       location: "Lâm Đồng",
       description: "Ánh sáng đến với những trẻ em đặc biệt cần được yêu thương",
-      image: null,
+      image: dashboardImage,
     },
   ];
 
@@ -63,11 +64,10 @@ export default function Dashboard() {
       <section
         className="bg-cover bg-center text-white py-16 md:py-32"
         style={{
-          backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1559027615-cd2628902d4a?w=1200&h=500&fit=crop")',
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${dashboardImage})`,
         }}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-2 sm:px-3 lg:px-4">
           <div className="max-w-2xl">
             <p className="text-sm md:text-base mb-2 opacity-90">THÁNG 2 2024</p>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -90,16 +90,19 @@ export default function Dashboard() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Sự mệnh của chúng tôi
-          </h2>
-          <p className="text-gray-600 mb-12 max-w-2xl">
-            Chúng tôi sứ mệnh là hỗ trợ giáo dục và chăm sóc các trẻ em có hoàn
-            cảnh khó khăn
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <section className="py-16 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-4">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Sự mệnh của chúng tôi
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl">
+              Chúng tôi sứ mệnh là hỗ trợ giáo dục và chăm sóc các trẻ em có
+              hoàn cảnh khó khăn. Mỗi lần giúp đỡ là một bước tiến trên con
+              đường sáng tạo tương lai tươi sáng.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <StatCard key={index} {...stat} />
             ))}
@@ -109,7 +112,7 @@ export default function Dashboard() {
 
       {/* Children Section */}
       <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-2 sm:px-3 lg:px-4">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               Các em cần hỗ trợ
@@ -131,7 +134,7 @@ export default function Dashboard() {
 
       {/* CTA Section */}
       <section className="bg-blue-50 py-12 md:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-6xl mx-auto px-2 sm:px-3 lg:px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Hãy cùng chúng tôi thay đổi cuộc sống
           </h2>
@@ -147,7 +150,7 @@ export default function Dashboard() {
 
       {/* Trust Section */}
       <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-2 sm:px-3 lg:px-4">
           <div className="flex items-center gap-4">
             <Users size={32} className="text-blue-600 flex-shrink-0" />
             <div>
@@ -164,7 +167,7 @@ export default function Dashboard() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-2 sm:px-3 lg:px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-bold mb-4">NuôiAnh</h3>

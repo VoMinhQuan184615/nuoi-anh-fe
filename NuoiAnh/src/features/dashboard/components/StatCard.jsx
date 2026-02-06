@@ -13,17 +13,17 @@ export default function StatCard({
   };
 
   return (
-    <div className="flex items-start gap-4">
+    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
       <div
-        className={`p-3 rounded-full ${colorClasses[color].bg} flex-shrink-0`}
+        className={`${colorClasses[color].bg} w-12 h-12 rounded-full flex items-center justify-center mb-4`}
       >
-        {Icon && <Icon size={32} className={colorClasses[color].icon} />}
+        {Icon && <Icon size={28} className={colorClasses[color].icon} />}
       </div>
-      <div>
-        <p className="text-sm text-gray-600 mb-2">{label}</p>
-        <p className="text-3xl font-bold text-gray-900 mb-1">{value}</p>
-        {increment && <p className="text-xs text-gray-600">↑ {increment}</p>}
-      </div>
+      <p className="text-4xl font-bold text-gray-900 mb-2">{value}</p>
+      <p className="text-sm text-gray-600 mb-3">{label}</p>
+      {increment && (
+        <p className="text-xs text-green-600 font-medium">↑ {increment}</p>
+      )}
     </div>
   );
 }

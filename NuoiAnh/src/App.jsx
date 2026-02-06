@@ -1,7 +1,13 @@
 import Dashboard from "./features/dashboard/pages/Dashboard";
+import { Toaster } from "./components/ui/sonner";
 
 function App() {
-  return <Dashboard />;
+  return (
+    <>
+      <Dashboard />
+      <Toaster />
+    </>
+  );
 }
 
 export default App;
