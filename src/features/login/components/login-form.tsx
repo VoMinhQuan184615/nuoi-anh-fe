@@ -25,7 +25,7 @@ export function LoginForm({
   return (
     <div
       className={cn(
-        "relative flex flex-col gap-6 w-full max-w-sm rounded-lg bg-white overflow-hidden ",
+        "relative flex flex-col gap-6 w-full max-w-sm rounded-lg overflow-hidden ",
         className,
       )}
       {...props}
@@ -136,8 +136,10 @@ export function LoginForm({
           </CardContent>
         </div>
       </Card>
-
-      <div className="px-6 pb-6 text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary">
+      <div
+        className="px-6 pb-6 text-center text-xs text-white
+  [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary"
+      >
         By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
         and <a href="#">Privacy Policy</a>.
       </div>

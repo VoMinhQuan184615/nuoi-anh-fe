@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { LoginForm } from "../components/login-form";
 import { useEffect } from "react";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -19,8 +20,11 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white py-8">
-      <LoginForm onLogin={handleLogin} />
+    <div className="relative flex items-center justify-center min-h-screen bg-black py-8 overflow-hidden">
+      <BackgroundBeams />
+      <div className="relative z-10">
+        <LoginForm onLogin={handleLogin} />
+      </div>
     </div>
   );
 }
